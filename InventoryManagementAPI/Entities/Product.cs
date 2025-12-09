@@ -1,0 +1,15 @@
+namespace InventoryManagementAPI.Entities;
+
+public class Product : BaseEntity
+{
+    public string Name { get; set; } = null!;
+    public string? Description { get; set; }
+    public decimal Price { get; set; }
+    public int Quantity { get; set; }
+    
+    public long CategoryId { get; set; }
+    public Category Category { get; set; }
+    
+    public List<Supply> Supplies { get; set; } = new();
+
+}
