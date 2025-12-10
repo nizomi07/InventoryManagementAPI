@@ -1,6 +1,7 @@
 using InventoryManagementAPI.DTOs;
 using InventoryManagementAPI.Entities;
 using InventoryManagementAPI.Filters;
+using InventoryManagementAPI.Responses;
 using InventoryManagementAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,10 +20,11 @@ public class ProductController(IProductService service) : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Product>>> GetAllProductsAsync([FromForm] GetProductsFilter filter)
+    
+    public async Task<ActionResult<Response<ResponseGetList<IEnumerable<Product>>>>> GetAllProductsAsync([FromQuery] GetProductsFilter filter)
     {
-        var categories = await service.GetAllProductsAsync(filter);
-        return Ok(categories);
+        var products = await service.GetAllProductsAsync(filter);
+        return Ok(products);
     }
 
     [HttpPut]
