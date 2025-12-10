@@ -7,9 +7,8 @@ public class Product : BaseEntity
     public decimal Price { get; set; }
     public int Quantity { get; set; }
     
-    public long CategoryId { get; set; }
+    public int CategoryId { get; set; }
     public Category Category { get; set; }
     
     public List<Supply> Supplies { get; set; } = new();
-
 }

@@ -19,7 +19,7 @@ public class ProductController(IProductService service) : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Product>>> GetAllProductsAsync([FromBody] GetProductsFilter filter)
+    public async Task<ActionResult<IEnumerable<Product>>> GetAllProductsAsync([FromForm] GetProductsFilter filter)
     {
         var categories = await service.GetAllProductsAsync(filter);
         return Ok(categories);

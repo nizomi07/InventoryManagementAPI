@@ -8,18 +8,16 @@ public class MapperProfile : Profile
 {
     public MapperProfile()
     {
-        
         CreateMap<AddProductDTO, Product>().ReverseMap();
         CreateMap<UpdateProductDTO, Product>().ReverseMap();
+
+        CreateMap<AddCategoryDTO, Category>().ReverseMap();
+        CreateMap<UpdateCategoryDTO, Category>().ReverseMap();
+
+        CreateMap<AddSupplierDTO, Supplier>().ReverseMap();
+        CreateMap<UpdateSupplierDTO, Supplier>().ReverseMap();
         
-        // CreateMap<AddAuthorDto, Author>().ReverseMap();
-        // CreateMap<AddBookDto, Book>().ReverseMap();
-        // CreateMap<AddOrderDto, Order>().ReverseMap();
-        // CreateMap<AddOrderBookDto, OrderBook>().ReverseMap();
-        //
-        // CreateMap<UpdateAuthorDto, Author>().ReverseMap();
-        // CreateMap<UpdateBookDto, Book>().ReverseMap();
-        // CreateMap<UpdateOrderDto, Order>().ReverseMap();
-        // CreateMap<UpdateOrderBookDto, OrderBook>().ReverseMap();
+        CreateMap<AddSupplyDTO, Supply>().ReverseMap();
+        CreateMap<UpdateSupplyDTO, Supply>().ReverseMap();
     }
 }

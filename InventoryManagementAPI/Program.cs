@@ -23,7 +23,11 @@ builder.Services.AddSwaggerGen();
 
 var connection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<DataContext>(conf => conf.UseNpgsql(connection));
+
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ISupplyService, SupplyService>();
+builder.Services.AddScoped<ISupplierService, SupplierService>();
 
 
 var app = builder.Build();

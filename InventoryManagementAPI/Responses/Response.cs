@@ -7,9 +7,7 @@ public class Response<T>
     public int StatusCode { get; set; }
     public string? Message { get; set; }
     public T? Content { get; set; }
-    public Response()
-    {
-    }
+    public Response() { }
 
     public Response(HttpStatusCode statusCode, string message)
     {

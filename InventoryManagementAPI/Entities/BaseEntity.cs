@@ -5,5 +5,5 @@ namespace InventoryManagementAPI.Entities;
 public class BaseEntity
 {
     [Key]
-    public long Id { get; set; }
+    public int Id { get; set; }
 }

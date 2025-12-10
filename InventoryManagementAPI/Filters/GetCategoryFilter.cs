@@ -1,11 +1,11 @@
 namespace InventoryManagementAPI.Filters;
 
-public class GetProductsFilter
+public class GetCategoryFilter
 {
     public int Page { get; set; } = 1;
     public int Size { get; set; } = 10;
-    public long? Id { get; set; }
+    
+    public int? Id { get; set; }
     public string? Name { get; set; }
     public string? Description { get; set; }
-    public int? CategoryId { get; set; }
 }
